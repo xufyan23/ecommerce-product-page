@@ -1,0 +1,161 @@
+@import '../index.scss';
+
+header {
+	.dropdown-toggle {
+		transition: all 0.3s ease;
+		&:after {
+			display: none;
+		}
+		&:hover, &.active {
+			filter:brightness(0.5);
+		}
+	}
+	.dropdown {
+		.dropdown-menu {
+			min-width: 20rem;
+			min-height: 200px;
+			margin-top: 1rem;
+			padding: 1rem;
+			left: 50% !important;
+			transform: translateX(-50%);
+			box-shadow: 0 5px 10px 4px #ebebeb;
+			border: 0;
+		}
+		.dropdown-heading {
+			font-weight: 600;
+			padding-bottom: 0.8rem;
+		}
+		.empty-cart {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, 0);
+			font-weight: 500;
+			font-size: 0.9rem;
+			color: $dark-grayish-blue;
+		}
+		.dropdown-divider {
+			margin-left: -1rem;
+   	 	margin-right: -1rem;
+			border-color: $dark-grayish-blue;
+		}
+	}
+	.navbar {
+		padding-left: 1rem;
+		padding-right: 1rem;
+		border-bottom: 1px solid #dfdfdf;
+		.navbar-brand {
+			margin-right: 2.8rem;
+		}
+		.nav-left {
+			.nav-link {
+				position: relative;
+				transition: all 0.3s ease-in-out;
+				&:not(:last-child) {
+					margin-right: 1.5rem;
+				}
+				&:hover {
+					&:after {
+						content: "";
+						display: block;
+						width: 100%;
+						height: 3px;
+						background: $orange;
+						position: absolute;
+						bottom: -22px;
+						left: 1px;
+						z-index: 999999;
+					}
+				}
+			}
+		}
+		.navbar-right {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			position: relative;
+			.user-img {
+				width: 50px;
+				border-radius: 100%;
+				&:hover {
+					box-shadow: 0 0 0 2px $orange;
+				}
+			}
+		}
+		.cart-counter {
+			width: 18px;
+			height: 18px;
+			position: absolute;
+			left: 16px;
+			top: 16px;
+			background: $orange;
+			z-index: 99;
+			border-radius: 100%;
+			text-align: center;
+			font-size: 12px;
+			color: #ffffff;
+		}
+	}
+}
+
+@media(max-width: 767px) {
+	header {
+		.navbar {
+			padding-left: 0;
+			padding-right: 0;
+			.navbar-toggler {
+				border: 0;
+				order: -1;
+				.navbar-toggler-icon {
+					width: 1.2em;
+					height: 1.2em;
+				}
+			}
+			.navbar-brand {
+				margin-right: 1rem;
+			}
+			.cart-counter {
+				top: 5px;
+			}
+			.navbar-collapse {
+				position: fixed;
+				top: 0px;
+				left: 0px;
+				width: 65%;
+				background: rgb(204, 204, 204);
+				min-height: 100vh;
+				height: 100%;
+				padding: 1rem;
+				z-index: 99999;
+				transform: translateX(-100%);
+    		transition: transform 0.3s ease-in-out;
+				&.show {
+					transform: translateX(0);
+				}
+				.navbar-nav {
+					max-height: 100% !important;
+				}
+			}
+			.navbar-right {
+				.navbar-nav {
+					flex-direction: row !important;
+				}
+				.user-img {
+					width: 30px;
+				}
+				.nav-link {
+					padding: 0.5rem;
+				}
+			}
+		}
+		.dropdown {
+			.dropdown-menu {
+				left: 0 !important;
+				min-width: 22.7rem;
+				transform: translateX(-75%);
+				box-shadow: none;
+				border-radius: 1rem;
+			}
+		}
+	}
+}

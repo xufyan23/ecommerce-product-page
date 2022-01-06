@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700&display=swap');
+
+$orange: hsl(26, 100%, 55%);
+$pale-orange: hsl(25, 100%, 94%);
+$very-vark-blue: hsl(220, 13%, 13%);
+$dark-grayish-blue: hsl(219, 9%, 45%);
+$grayish-blue: hsl(220, 14%, 75%);
+$light-grayish-blue: hsl(223, 64%, 98%);
+
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:'Kumbh Sans', sans-serif;
+
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 1rem;
+}
+a, button, h1, p {
+  font-family:'Kumbh Sans', sans-serif;
+}
+
+h1 {
+  font-weight: 600;
+}
+
+p {
+  color: $dark-grayish-blue;
+}
+
+.clr-orange {
+  color: $orange;
+}
+
+.btn-primary {
+  background: $orange;
+  border-color: $orange;
+  font-weight: 600;
+  border-radius: 8px;
+  box-shadow: 3px 8px 11px rgba(255, 125, 26, 0.3);
+  transition: transform 0.3s ease-in-out;
+  &:focus, &:hover, &:disabled {
+    background: $orange;
+    border-color: $orange;
+    transform: translateY(-5px);
+  }
+}
+
+
+
+.img-slider {
+	.image-thumbnail {
+		display: flex;
+		gap: 30px;
+		.img-block {
+			position: relative;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			&:hover, &.active {
+				&:before {
+					content: "";
+					width: 90px;
+					height: 90px;
+					position: absolute;
+					inset: 0;
+					border-radius: 10px;
+					box-shadow: 0 0 0 2px $orange;
+				}
+				img {
+					opacity: 0.4;
+				}
+			}
+			img {
+				width: 90px;
+				border-radius: 10px;
+				// &:hover {
+				// 	opacity: 0.3;
+				// }
+			}
+		}
+	}
+}
+
+@media(max-width: 992px) {
+	.img-slider {
+		.img-preview {
+			img {
+				width: 100%;
+			}
+		}
+		.image-thumbnail {
+			margin-top: 2rem;
+		}
+	}
+}
+
+@media(max-width: 767px) {
+	.img-slider {
+		.img-preview {
+			img {
+				width: 100%;
+			}
+		}
+		.image-thumbnail {
+			gap: 15px;
+			justify-content: center;
+			margin-top: 2rem;
+			.img-block {
+				img {
+					width: 76px;
+				}
+			}
+		}
+	}
+}
