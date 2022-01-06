@@ -3,7 +3,6 @@ import './App.scss';
 import Header from './Header/Header';
 import Product from './Product/Product';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { useSelector, useDispatch} from 'react-redux';
 import productList from '../src/Data';
 
 
@@ -14,8 +13,6 @@ function App() {
   console.log(productImages)
   const [activeImage, setActiveImage] = useState(productData[0].images[0].previewImg);
   const [total, setTotal] = useState(0);
-
-  const dispatch = useDispatch();
 
   return (
     <div className="">
