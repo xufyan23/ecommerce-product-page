@@ -21,7 +21,7 @@ function App() {
     <div className="">
       <Router>
         <Switch>
-          <Route Route path = "/"exact >
+          <Route Route path = "/"exact>
             <Header productData={productData} activeImg={activeImage} total={total}/>
             <Product productData={productData} activeImg={activeImage} setActiveImg={setActiveImage} />
           </Route>

@@ -13,7 +13,7 @@ const initialState = {
 }
 
 const appReducer = (state = initialState, action) => {
-	console.log(action.payload)
+	// console.log(action.payload)
 	switch(action.type) {
 		case INCREMENT:
 			return {...state , QUANTITY: state.QUANTITY + 1 , INCREMENT: state.INCREMENT + 1}
