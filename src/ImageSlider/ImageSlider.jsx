@@ -31,7 +31,6 @@ const ImageSlider=({images, setActiveImg, activeImg}) => {
             />
           </div>
         ))}
-        {/* <img src={image.imageThumbnail} alt="name" /> */}
       </div>
       <ImagePopUp
         images={images}

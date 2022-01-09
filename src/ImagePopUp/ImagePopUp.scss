@@ -7,6 +7,11 @@
 	}
 	.modal-header {
 		border-bottom: 0;
+		justify-content: flex-end;
+		cursor: pointer;
+		img {
+			width: 20px;
+		}
 	}
 	.modal-body {
 		.arrow-left, .arrow-right {
@@ -23,15 +28,24 @@
 		.arrow-right {
 			right: 0;
 		}
+		.modal-slider {
+			.img-preview {
+				img {
+					width: 100%;
+					border-radius: 10px;
+				}
+				margin-bottom: 2rem;
+			}
+			.image-thumbnail {
+				justify-content: center;
+				gap: 20px;
+			}
+		}
 	}
 }
 
 @media(max-width: 992px) {
 	.modal {
-		.preview-img {
-			img {
-				width: 100%;
-			}
-		}
+
 	}
 }

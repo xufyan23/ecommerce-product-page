@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import React from 'react';
 import './ProductInfo.scss';
 import PlusIcon from '../images/icon-plus.svg';
 import MinusIcon from '../images/icon-minus.svg';

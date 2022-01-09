@@ -3,6 +3,7 @@ import "./ImagePopUp.scss";
 import Modal from "react-bootstrap/Modal";
 import ArrowLeft from "../images/icon-previous.svg";
 import ArrowRight from "../images/icon-next.svg";
+import Close from "../images/icon-close.svg";
 
 const ImagePopUp = ({images, displayModal, modalImgPreview, setDisplayModal}) => {
   const [index, setIndex] = useState(0);
@@ -39,7 +40,7 @@ const ImagePopUp = ({images, displayModal, modalImgPreview, setDisplayModal}) =>
 
 	return (
     <Modal className="" show={displayModal}>
-      <Modal.Header closeButton onClick={handleClose}></Modal.Header>
+      <Modal.Header onClick={handleClose}><img src={Close} alt="close"/></Modal.Header>
       <Modal.Body>
         <div className="arrows">
           <button className="arrow-left btn" onClick={handlePreviousImg}>
@@ -49,7 +50,7 @@ const ImagePopUp = ({images, displayModal, modalImgPreview, setDisplayModal}) =>
             <img src={ArrowRight} alt="slide right" />
           </button>
         </div>
-        <div className="img-slider">
+        <div className="img-slider modal-slider">
           <div className="img-preview">
             <img src={modalImg} alt="" />
           </div>
